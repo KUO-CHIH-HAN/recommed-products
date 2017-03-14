@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>問卷入口</title>
+	<meta name="description" content="簡介寫在這邊" />
+	<meta property="og:image" content="FB縮圖"/>  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.min.js"></script>
+</head>
+<body>
+	<!-- Put Url Here That You Want To Redirect -->
+	<script>
+	var url = [
+		'http://1',
+		'http://2',
+		'http://3',
+		'http://4',
+		'http://5',
+		'http://6',
+		'http://7',
+		'http://8',
+		'http://9',
+		'http://10',
+		'http://11',
+		'http://12',
+		'http://13',
+		'http://14',
+		'http://15',
+		'http://16',
+	];
+	</script>
+	<!-- Put Url Here That You Want To Redirect -->
+	<script>
+	if(Cookies.get('redirected')){
+		var u = Cookies.get('redirected');
+		window.location.href = url[u];
+	}else{
+		var urlNumber = randomInt(0, url.length);
+		Cookies.set('redirected', urlNumber, { expires: 90 });
+		window.location.href = url[urlNumber];
+	}	
+	function randomInt(min, max){
+	    return Math.floor(Math.random()*(max-min+1)+min);
+	}
+	</script>
+</body>
+</html>
